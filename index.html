@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Qustin Blog</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ccircle cx=%278%27 cy=%278%27 r=%278%27 fill=%27%23b9fbc0%27/%3E%3C/svg%3E">
+    </head>
+    <body>
+        <canvas id="bg3d" aria-hidden="true"></canvas>
+        <div class="frost" aria-hidden="true"></div>
+        <header class="container">
+            <a href="#posts" class="site-title">
+                my freaking portfolio ✨
+            </a>
+            <nav>
+                <a href="#posts">posts</a>
+                <a href="#about">about</a>
+            </nav>
+        </header>
+        <main class="container">
+            <section class="section" id="posts">
+                <h2>Latest posts</h2>
+                <div id="postList" class="post-list"></div>
+            </section>
+            <section class="section" id="postView" hidden>
+                <article id="postContent" class="card prose"></article>
+            </section>
+            <section class="section" id="about">
+                <h2>About me</h2>
+                <p class="lead">
+                    I'm just a dev lmao
+                </p>
+            </section>
+            <footer>
+                built with my clanker friend
+            </footer>
+        </main>
+        <!-- Tiny 3D scene: zero React, pure modules from CDN -->
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>

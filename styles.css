@@ -1,0 +1,287 @@
+:root {
+    --bg1: #e8fff3;
+    --bg2: #eaf7f0;
+    --bg3: #f3fff9;
+    --text: #0f3d33;
+    --accent: #b9fbc0;
+    --ring: #7bd389;
+}
+
+/* Alternative greenish palettes for the theme toggle */
+.theme-seafoam {
+    --bg1: #e6fff4;
+    --bg2: #e9fbff;
+    --bg3: #f3fff9;
+    --text: #124d42;
+    --accent: #b9fbc0;
+    --ring: #7bd389;
+}
+
+.theme-olive {
+    --bg1: #eef5e6;
+    --bg2: #f2f7ea;
+    --bg3: #f7fbef;
+    --text: #2d3b2f;
+    --accent: #cde6b8;
+    --ring: #94d08a;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", "Comic Neue", cursive;
+    color: var(--text);
+    background: #f7f2ff;
+    /* soft lavender (non-green) */
+    overflow-x: hidden;
+}
+
+/* 3D canvas as background */
+#bg3d {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /* ensure above page background */
+    pointer-events: none;
+}
+
+/* subtle frost for readability */
+.frost {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: blur(1px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 20px;
+    position: relative;
+    /* ensure content sits above canvas */
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    opacity: .8;
+    margin-left: 14px
+}
+
+nav a:hover {
+    opacity: 1
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--text)
+}
+
+.btn {
+    border: none;
+    border-radius: 16px;
+    padding: 10px 16px;
+    cursor: pointer;
+    background: var(--accent);
+    color: var(--text);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+    outline: 2px solid var(--ring);
+    font-weight: 700;
+}
+
+.btn-secondary {
+    background: #fff;
+    outline: 2px solid var(--ring);
+}
+
+.cta-row {
+    margin-top: 16px
+}
+
+/* Typography: consistent, blog-style scale */
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    margin: 20px 0 10px
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.0rem);
+    line-height: 1.15;
+    margin: 0 0 12px
+}
+
+p,
+li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.lead {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    opacity: .95;
+    max-width: 62ch;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Vertical blog list */
+.post-list {
+    display: grid;
+    gap: 16px;
+}
+
+.post-item .post-meta {
+    font-size: .85rem;
+    opacity: .75;
+    margin-bottom: 6px;
+}
+
+.post-item .read-more {
+    margin-top: 8px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text);
+    opacity: .9;
+}
+
+.post-item .read-more:hover {
+    opacity: 1;
+}
+
+@media(min-width:720px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(min-width:960px) {
+    .row {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    outline: 2px solid var(--ring);
+    transition: transform .15s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px)
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 6px
+}
+
+.tag {
+    display: inline-block;
+    font-size: .8rem;
+    opacity: .75;
+    margin-bottom: 6px
+}
+
+.section {
+    padding: 34px 0;
+}
+
+.contact-form {
+    display: grid;
+    gap: 10px;
+    max-width: 680px
+}
+
+.contact-form .card {
+    outline-offset: 2px;
+    padding: 12px
+}
+
+.contact-form .btn {
+    justify-self: start
+}
+
+footer {
+    opacity: .85;
+    padding: 40px 0;
+    font-size: .95rem
+}
+
+/* Prose styles for markdown content */
+.prose {
+    line-height: 1.75;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+    margin: 0 0 12px;
+}
+
+.prose h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem)
+}
+
+.prose h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem)
+}
+
+.prose h3 {
+    font-size: clamp(1.2rem, 2.4vw, 1.4rem)
+}
+
+.prose p {
+    margin: 0 0 12px
+}
+
+.prose ul {
+    padding-left: 20px;
+    margin: 0 0 12px
+}
+
+.prose li {
+    margin: 4px 0
+}
+
+.prose code {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.prose pre {
+    background: rgba(0, 0, 0, 0.06);
+    padding: 12px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.prose pre code {
+    background: transparent;
+    padding: 0;
+}

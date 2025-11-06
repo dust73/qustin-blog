@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Hello, minty world",
+        "date": "2025-11-06",
+        "tag": "note",
+        "excerpt": "Kicking off a green pastel blog—thoughts on vibes and velocity.",
+        "url": "./posts/hello-minty-world.md"
+    },
+    {
+        "title": "Making blobs behave",
+        "date": "2025-11-05",
+        "tag": "webgl",
+        "excerpt": "A tiny note on spinning shapes, autorotate, and restraint.",
+        "url": "./posts/making-blobs-behave.md"
+    }
+]

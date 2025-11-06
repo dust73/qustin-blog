@@ -155,6 +155,7 @@ li {
     font-size: .85rem;
     opacity: .75;
     margin-bottom: 6px;
+    text-align: left;
 }
 
 .post-item .read-more {
@@ -167,6 +168,24 @@ li {
 
 .post-item .read-more:hover {
     opacity: 1;
+}
+
+/* Flatten link appearance on cards */
+.post-item {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.post-item:visited {
+    color: var(--text);
+}
+
+.post-item:hover {
+    text-decoration: none;
+}
+
+.post-item .card-title {
+    color: var(--text);
 }
 
 @media(min-width:720px) {
@@ -182,16 +201,16 @@ li {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.66);
-    border-radius: 18px;
+    background: #ffffff;
+    border-radius: 8px;
     padding: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    outline: 2px solid var(--ring);
-    transition: transform .15s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+    transition: none;
 }
 
 .card:hover {
-    transform: translateY(-2px)
+    transform: none
 }
 
 .card-title {
@@ -284,4 +303,44 @@ footer {
 .prose pre code {
     background: transparent;
     padding: 0;
+}
+
+/* Post view: smaller, uniform text; title only slightly larger */
+#postView .prose {
+    font-size: .95rem;
+    line-height: 1.7;
+}
+
+#postView .prose h1 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+#postView .prose h2,
+#postView .prose h3,
+#postView .prose h4,
+#postView .prose h5,
+#postView .prose h6 {
+    font-size: .95rem;
+    margin-bottom: 8px;
+}
+
+#postView .prose p,
+#postView .prose li {
+    font-size: .95rem;
+}
+
+/* Back link styling */
+.post-nav {
+    margin-bottom: 10px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--text);
+    opacity: .85;
+}
+
+.back-link:hover {
+    opacity: 1;
 }

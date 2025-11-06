@@ -122,7 +122,10 @@ window.addEventListener('pointermove', (e) => {
 function formatDate(iso) {
     try {
         const d = new Date(iso + 'T00:00:00');
-        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
     } catch {
         return iso;
     }

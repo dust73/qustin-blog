@@ -11,11 +11,12 @@
         <canvas id="bg3d" aria-hidden="true"></canvas>
         <div class="frost" aria-hidden="true"></div>
         <header class="container">
-            <a href="#posts" class="site-title">
+            <a href="#" class="site-title">
                 my freaking portfolio ✨
             </a>
             <nav>
                 <a href="#posts">posts</a>
+                <a href="#experience">experience</a>
                 <a href="#about">about</a>
             </nav>
         </header>
@@ -24,11 +25,21 @@
                 <h2>Latest posts</h2>
                 <div id="postList" class="post-list"></div>
             </section>
+            <section class="section" id="experience">
+                <h2>Experience</h2>
+                <div id="experienceList" class="post-list"></div>
+            </section>
             <section class="section" id="postView" hidden>
                 <div class="post-nav">
                     <a id="backToPosts" class="back-link" href="#posts">← Back</a>
                 </div>
                 <article id="postContent" class="card prose"></article>
+            </section>
+            <section class="section" id="experienceView" hidden>
+                <div class="post-nav">
+                    <a id="backToExperience" class="back-link" href="#experience">← Back</a>
+                </div>
+                <article id="experienceContent" class="card prose"></article>
             </section>
             <section class="section" id="about">
                 <h2>About me</h2>

@@ -1,0 +1,38 @@
+[
+    {
+        "company": "Perpay",
+        "role": "Software Engineer III",
+        "start": "2023-01",
+        "end": null,
+        "location": "Philadelphia, PA",
+        "excerpt": "Led migration from Magento 1 to headless Magento 2; architected zero-downtime data migrations and built Paychex SSO integration.",
+        "url": "./experience/perpay-se3.md"
+    },
+    {
+        "company": "Perpay",
+        "role": "Software Engineer I",
+        "start": "2022-01",
+        "end": "2022-12",
+        "location": "Philadelphia, PA",
+        "excerpt": "Designed distributed processing systems; developed asynchronous credit score ingestion handling millions of daily records.",
+        "url": "./experience/perpay-se1.md"
+    },
+    {
+        "company": "Rockstar Music",
+        "role": "Software Engineer Intern",
+        "start": "2021-09",
+        "end": "2021-12",
+        "location": "Toronto, ON",
+        "excerpt": "Migrated legacy infrastructure to Express.js + Azure; designed onboarding experience reducing teacher drop-off by 20%.",
+        "url": "./experience/rockstar.md"
+    },
+    {
+        "company": "Toronto Metropolitan University",
+        "role": "B.Sc. Computer Science, Minor in Philosophy",
+        "start": "2017-09",
+        "end": "2022-05",
+        "location": "Toronto, ON",
+        "excerpt": "Bachelor of Science in Computer Science with a minor in Philosophy.",
+        "url": "./experience/education.md"
+    }
+]

@@ -1,10 +1,22 @@
 :root {
-    --bg1: #e8fff3;
-    --bg2: #eaf7f0;
-    --bg3: #f3fff9;
-    --text: #0f3d33;
-    --accent: #b9fbc0;
-    --ring: #7bd389;
+    /* Lazy Days palette */
+    /* #97B3AE, #D2E0D3, #F0DDD6, #F2C3B9, #D6CBBF, #F0EEEA */
+    --bg: #D6CBBF;
+    /* brown/taupe background */
+    --text: #1f3d2e;
+    /* deep green text */
+    --accent: #D2E0D3;
+    /* sage green primary */
+    --ring: #97B3AE;
+    /* muted teal outline */
+    --border: #D6CBBF;
+    /* warm taupe border */
+    --peach: #F0DDD6;
+    /* pink highlight */
+    --salmon: #F2C3B9;
+    /* pink highlight */
+    --paper: #EDE8E0;
+    /* darker beige for cards */
 }
 
 /* Alternative greenish palettes for the theme toggle */
@@ -31,13 +43,20 @@ body {
     height: 100%;
 }
 
+html {
+    background: var(--bg);
+    background-color: var(--bg);
+    scrollbar-gutter: stable;
+}
+
 body {
     margin: 0;
-    font-family: "Comic Sans MS", "Comic Neue", cursive;
+    font-family: Tahoma, Geneva, sans-serif;
     color: var(--text);
-    background: #f7f2ff;
-    /* soft lavender (non-green) */
+    background: var(--bg);
+    background-color: var(--bg);
     overflow-x: hidden;
+    scrollbar-gutter: stable;
 }
 
 /* 3D canvas as background */
@@ -51,20 +70,23 @@ body {
 
 /* subtle frost for readability */
 .frost {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    backdrop-filter: blur(1px);
-    background: rgba(255, 255, 255, 0.18);
+    display: none;
+    /* ensure solid background shows */
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 700px;
     margin-inline: auto;
     padding: 20px;
     position: relative;
     /* ensure content sits above canvas */
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
 }
 
 header {
@@ -73,6 +95,24 @@ header {
     justify-content: space-between;
     gap: 12px;
     padding: 14px 0;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    nav {
+        display: flex;
+        gap: 12px;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
 }
 
 nav a {
@@ -106,7 +146,7 @@ nav a:hover {
 }
 
 .btn-secondary {
-    background: #fff;
+    background: var(--peach);
     outline: 2px solid var(--ring);
 }
 
@@ -124,7 +164,8 @@ h1 {
 h2 {
     font-size: clamp(1.6rem, 3.2vw, 2.0rem);
     line-height: 1.15;
-    margin: 0 0 12px
+    margin: 0 0 12px;
+    color: var(--text);
 }
 
 p,
@@ -178,6 +219,8 @@ li {
 
 .post-item:visited {
     color: var(--text);
+    background: rgba(237, 232, 224, 0.85) !important;
+    background-color: rgba(237, 232, 224, 0.85) !important;
 }
 
 .post-item:hover {
@@ -194,19 +237,20 @@ li {
     }
 }
 
-@media(min-width:960px) {
-    .row {
-        grid-template-columns: repeat(3, 1fr)
-    }
-}
-
-.card {
-    background: #ffffff;
+.card,
+a.card,
+.card.post-item,
+.post-item.card {
+    background: rgba(237, 232, 224, 0.85) !important;
+    background-color: rgba(237, 232, 224, 0.85) !important;
     border-radius: 8px;
     padding: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--accent);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
     transition: none;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -222,12 +266,18 @@ li {
 .tag {
     display: inline-block;
     font-size: .8rem;
-    opacity: .75;
-    margin-bottom: 6px
+    margin-bottom: 6px;
+    background: var(--accent);
+    color: var(--text);
+    padding: 2px 8px;
+    border-radius: 6px;
 }
 
 .section {
     padding: 34px 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-form {
@@ -254,6 +304,8 @@ footer {
 /* Prose styles for markdown content */
 .prose {
     line-height: 1.75;
+    max-width: 100%;
+    width: 100%;
 }
 
 .prose h1,
@@ -263,11 +315,13 @@ footer {
 }
 
 .prose h1 {
-    font-size: clamp(1.8rem, 4vw, 2.4rem)
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--text);
 }
 
 .prose h2 {
-    font-size: clamp(1.4rem, 3vw, 1.8rem)
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    color: var(--text);
 }
 
 .prose h3 {
@@ -288,16 +342,18 @@ footer {
 }
 
 .prose code {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--accent);
     padding: 0 4px;
     border-radius: 4px;
 }
 
 .prose pre {
-    background: rgba(0, 0, 0, 0.06);
+    background: var(--accent);
     padding: 12px;
     border-radius: 10px;
     overflow: auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .prose pre code {
@@ -305,13 +361,23 @@ footer {
     padding: 0;
 }
 
-/* Post view: smaller, uniform text; title only slightly larger */
-#postView .prose {
-    font-size: .95rem;
-    line-height: 1.7;
+/* Post/Experience view: smaller, uniform text; title only slightly larger */
+#postView,
+#experienceView {
+    max-width: 100%;
+    width: 100%;
 }
 
-#postView .prose h1 {
+#postView .prose,
+#experienceView .prose {
+    font-size: .95rem;
+    line-height: 1.7;
+    max-width: 100%;
+    width: 100%;
+}
+
+#postView .prose h1,
+#experienceView .prose h1 {
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
@@ -320,13 +386,20 @@ footer {
 #postView .prose h3,
 #postView .prose h4,
 #postView .prose h5,
-#postView .prose h6 {
+#postView .prose h6,
+#experienceView .prose h2,
+#experienceView .prose h3,
+#experienceView .prose h4,
+#experienceView .prose h5,
+#experienceView .prose h6 {
     font-size: .95rem;
     margin-bottom: 8px;
 }
 
 #postView .prose p,
-#postView .prose li {
+#postView .prose li,
+#experienceView .prose p,
+#experienceView .prose li {
     font-size: .95rem;
 }
 
